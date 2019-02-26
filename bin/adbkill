@@ -1,0 +1,3 @@
+#!/bin/bash
+pkg=$1
+adb shell ps | awk "/$pkg/{system(\"echo kill package: \"\$NF); system(\"adb shell kill \"\$2)}"
